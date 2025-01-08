@@ -18,15 +18,35 @@
       <!--Manejo de recursos-->
       <a-assets timeout="10000">
         <!--carga el terreno>
-
+        <a-asset-item
+        id="terrainMap"
+        scr="./models/terrain/scene.gltf">
+      </a-asset-item>
         <!--carga el trineo>
-
+        <a-asset-item
+        id="sled"
+        src="./models/airplane/Trineo.glb">
+      </a-asset-item>
       </a-assets>
 
       <!-- Agrega las propiedades del terreno  -->
-
+       <a-entity
+         id="terrain"
+         gltf-model="#terrainMap"
+         position="0 0 0"
+         scale="0.3 0.3 0.3"
+         animation="property: position; to: 0 0 1000;easing:linear; loop:true; dur: 150000"
+         terrain-rotation-reader>
+         </a-entity>
       <!-- Agrega las propiedades del trineo -->
-
+         <a-entity
+           id="sled_model"
+           gltf-model="#sled"
+           position="0 -9 0"
+           scale="0.15 0.15 0.15"
+           rotation="0 -90 0"
+           sled-rotation-reader>
+           </a-entity>
     </a-scene>
   </body>
 </html>
